@@ -1,0 +1,18 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3951
+
+This allows copy/paste from one vim session to another outside of a window manager. In my case, I have muliple PuTTY windows, each running screen, where many screens have an instance of vim.
+
+Provides two convenience commands: `TmpClipWrite` and `TmpClipRead` which work with the default (") register. Implementing functions are `tmpClipWrite` and `tmpClipRead` which accept the register as an argument.
+
+Sample usage:
+
+  Vim instance #1 (source)
+    
+    yy                - Yank [copy] the current line
+    :TmpClipWrite     - Write it to ~/.tmpclip
+
+  Vim instance #2 (destination)
+
+    :TmpClipRead      - Read ~/.tmpclip
+    p                 - Put [paste] it
+
